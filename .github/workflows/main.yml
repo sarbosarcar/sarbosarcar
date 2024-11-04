@@ -36,6 +36,9 @@ jobs:
           git config --local user.email "sarbosarcar@gmail.com"
           git add output/*
           git commit -m "Update SVG files in output/"
-          git push origin main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
