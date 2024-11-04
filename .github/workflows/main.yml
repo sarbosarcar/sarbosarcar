@@ -28,11 +28,14 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
         
-      - name: push github-contribution-grid-snake.svg to the output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
-        with:
-          target_branch: main
-          build_dir: dist
-          destination_dir: output
+      - name: Move and commit SVG files
+        run: |
+          mkdir -p output/
+          mv dist/*.svg output/
+          git config --local user.name "sarbosarcar"
+          git config --local user.email "sarbosarcar@gmail.com"
+          git add output/*
+          git commit -m "Update SVG files in output/"
+          git push origin main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
