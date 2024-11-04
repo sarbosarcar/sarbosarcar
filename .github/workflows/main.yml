@@ -21,7 +21,7 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
           
@@ -39,8 +39,12 @@ jobs:
           mv dist/*.svg output/
           git config user.name "sarbosarcar"
           git config user.email "sarbosarcar@gmail.com"
-          git add output/*
-          git commit -m "Update SVG files in output/"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add output/*
+            git commit -m "Update SVG files in output/"
+          else
+            echo "No changes to commit"
+          fi
           
       - name: Push changes
         uses: ad-m/github-push-action@master
