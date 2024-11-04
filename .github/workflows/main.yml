@@ -32,8 +32,8 @@ jobs:
         run: |
           mkdir -p output/
           mv dist/*.svg output/
-          git config --local user.name "sarbosarcar"
-          git config --local user.email "sarbosarcar@gmail.com"
+          git config user.name "sarbosarcar"
+          git config user.email "sarbosarcar@gmail.com"
           git add output/*
           git commit -m "Update SVG files in output/"
           
