@@ -38,7 +38,7 @@ root@localhost:~$ cat about.json
 
 ### :1234: GitHub Statistics:
 
-<p align="center"> 
+<p align="left"> 
   <img src="https://komarev.com/ghpvc/?username=sarbosarcar&label=Profile%20views&color=0e75b6&style=for-the-badge" alt="sarbosarcar" /> 
   <img alt="GitHub followers" src="https://img.shields.io/github/followers/sarbosarcar?style=for-the-badge" />
 </p>
